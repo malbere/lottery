@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import CreateAccountForm from './pages/CreateAccountFormPage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+  },
+  {
+    path: "register",
+    element: <CreateAccountForm/>,
   },
 ]);
 
