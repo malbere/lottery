@@ -2,8 +2,8 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-slate-500 text-white py-4 ">
-      <div className="container mx-auto px-4 w-full space-y-6 w-2/4">
+    <footer className="bg-slate-500 text-white py-4 fixed place-content-center bottom-0 w-full">
+      <div className="container mx-auto px-4 space-y-6 w-2/4">
 
         <div>
           <h2 className="text-lg font-bold">WHAT IS THE CRYPTOLOTTERY?</h2>
