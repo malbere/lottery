@@ -7,6 +7,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
+        img: '/img/card/1.png',
         alt: 'image of card'
     },
     {
@@ -14,6 +15,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
+        img: '/img/card/3.png',
         alt: 'image of card'
     },
     {
@@ -21,6 +23,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
+        img: '/img/card/2.png',
         alt: 'image of card'
     },
     {
@@ -28,6 +31,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
+        img: '/img/card/4.png',
         alt: 'image of card'
     },
 ];
