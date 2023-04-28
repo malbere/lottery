@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../components/card';
+import Numpick from '../components/numpick';
 
 const data = [
     {
@@ -80,7 +81,12 @@ function Mainpage() {
                                 </div>
                             ))}
                         </div>
-                    </div >
+            </div >
+            <div>
+                <Numpick></Numpick>
+            </div>
+
+
         </div>    )
 }
 

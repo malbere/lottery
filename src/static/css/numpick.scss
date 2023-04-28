@@ -1,0 +1,26 @@
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+td.selected {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+.selected {
+  background-color: red;
+}
