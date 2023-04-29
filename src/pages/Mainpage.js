@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/card';
 import Numpick from '../components/numpick';
+import { useNavigate } from 'react-router-dom';
 
 const data = [
     {
@@ -37,7 +38,14 @@ const data = [
     },
 ];
 
+
 function Mainpage() {
+    const navigate = useNavigate();
+
+    const handleGetStartedClick = () => {
+        navigate('/register');
+    };
+
     return (
         <div>
 
@@ -46,7 +54,7 @@ function Mainpage() {
                     <p className="text-white text-8xl ml-auto pl-12 mb-10 font-extrabold">Make Your Own Luck!</p>
                     <p className="text-white text-2xl ml-auto pl-12 mb-0">Believe it or not... you're luckier</p> <br /> <p className="text-white text-2xl ml-auto pl-12 mt-0">than you think!</p>
                     <div className="pl-12 pt-20">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+                        <button type="button" onClick={handleGetStartedClick} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
                     </div>
                 </div>
                 <div className="w-1/2">
@@ -69,25 +77,25 @@ function Mainpage() {
                         <p className="text-white font-bold text-8xl mr-4 pb-2">3</p>
                     </div >
                     {/* Play block */}
-                
+
                 </div>
             </div >
             < div className="container mx-auto p-4" >
-                        <h1 className="text-4xl font-bold mb-4 text-white text-center">PLAY LOTTERY ONLINE</h1>
-                        <div className="grid grid-cols-2 gap-4 justify-center">
-                            {data.map((item, index) => (
-                                <div className="col-span-1 mb-4" key={index}>
-                                    <Card data={item} />
-                                </div>
-                            ))}
+                <h1 className="text-4xl font-bold mb-4 text-white text-center">PLAY LOTTERY ONLINE</h1>
+                <div className="grid grid-cols-2 gap-4 justify-center">
+                    {data.map((item, index) => (
+                        <div className="col-span-1 mb-4" key={index}>
+                            <Card data={item} />
                         </div>
+                    ))}
+                </div>
             </div >
             <div>
                 <Numpick></Numpick>
             </div>
 
 
-        </div>    )
+        </div>)
 }
 
 export default Mainpage
