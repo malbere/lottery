@@ -5,7 +5,6 @@ import App from './App';
 import Play from './pages/Play';
 import CreateAccountForm from './pages/CreateAccountFormPage';
 import Login from './pages/Login'
-import Play from './pages/Play'
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
