@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Card from '../components/card';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 const data = [
     {
@@ -36,6 +35,39 @@ const data = [
         img: '/img/card/4.png',
         alt: 'image of card'
     },
+    ,
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/5.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/6.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/7.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/8.png',
+        alt: 'image of card'
+    }
 ];
 
 

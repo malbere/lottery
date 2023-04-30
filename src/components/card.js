@@ -12,7 +12,7 @@ const Card = ({ data }) => {
     return (
         <div className="flex flex-col items-center md:flex-row md:max-w-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow">
             <img
-                className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-l-lg md:rounded-t-none rounded-t-lg"
+                className="object-contain md:h-auto md:w-48 md:rounded-l-lg md:rounded-t-none rounded-t-lg"
                 src={data.img}
                 alt={data.alt}
                 style={{ backgroundColor: "rgba(11, 18, 29, 0.7)", width: "229px", height: "210px" }}
