@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import Play from './pages/Play';
 import CreateAccountForm from './pages/CreateAccountFormPage';
 import Login from './pages/Login'
 import reportWebVitals from './reportWebVitals';

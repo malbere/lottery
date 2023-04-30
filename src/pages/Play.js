@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../static/css/numpick.scss';
+import { useNavigate } from 'react-router-dom';
 
 function Numpick() {
     const navigate = useNavigate();
