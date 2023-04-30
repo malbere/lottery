@@ -69,7 +69,7 @@ function Mainpage() {
                         </div>
                     </div>
                     <div class="w-1/2 flex justify-center items-center pl-10">
-                        <img class="w-full" src="img/promo.png" alt="" />
+                        <img class="w-full" src="img/promopng.png" alt="" />
                     </div>
                 </div>
             </div>
