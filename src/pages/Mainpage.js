@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Card from '../components/card';
 import { useNavigate } from 'react-router-dom';
 
@@ -35,6 +35,39 @@ const data = [
         img: '/img/card/4.png',
         alt: 'image of card'
     },
+    ,
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/5.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/6.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/7.png',
+        alt: 'image of card'
+    },
+    {
+        title: '$448,000,000',
+        date: '26 April 19:00',
+        description: 'Text',
+        price: '$5.00',
+        img: '/img/card/8.png',
+        alt: 'image of card'
+    }
 ];
 
 
@@ -43,6 +76,12 @@ function Mainpage() {
 
     const handleGetStartedClick = () => {
         navigate('/register');
+    };
+
+    const [showAllLotteries, setShowAllLotteries] = useState(false);
+
+    const handleViewAllLotteries = () => {
+        setShowAllLotteries(true);
     };
 
     return (
@@ -101,6 +140,20 @@ function Mainpage() {
                             <Card data={item} />
                         </div>
                     ))}
+                </div>
+                <div>
+                    {!showAllLotteries && (
+                        <button onClick={handleViewAllLotteries}>View all lotteries</button>
+                    )}
+                    {showAllLotteries && (
+                        <div className="grid grid-cols-2 gap-4 justify-center">
+                            {data.map((item, index) => (
+                                <div className="col-span-1 mb-4 pl-24" key={index}>
+                                    <Card data={item} />
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div >
 
