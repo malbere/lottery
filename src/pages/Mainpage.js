@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/card';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const data = [
     {
@@ -43,6 +44,12 @@ function Mainpage() {
 
     const handleGetStartedClick = () => {
         navigate('/register');
+    };
+
+    const [showAllLotteries, setShowAllLotteries] = useState(false);
+
+    const handleViewAllLotteries = () => {
+        setShowAllLotteries(true);
     };
 
     return (
@@ -101,6 +108,20 @@ function Mainpage() {
                             <Card data={item} />
                         </div>
                     ))}
+                </div>
+                <div>
+                    {!showAllLotteries && (
+                        <button onClick={handleViewAllLotteries}>View all lotteries</button>
+                    )}
+                    {showAllLotteries && (
+                        <div className="grid grid-cols-2 gap-4 justify-center">
+                            {data.map((item, index) => (
+                                <div className="col-span-1 mb-4 pl-24" key={index}>
+                                    <Card data={item} />
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div >
 
