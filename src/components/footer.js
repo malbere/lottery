@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-transponent text-white py-4 bottom w-full pb-18">
+    <footer className="bg-transponent text-white py-4 bottom w-full pt-20 pb-18">
     {/* </footer><footer className="flex flex-col items-center justify-center"> */}
       <div className="container mx-auto px-4 space-y-6 w-2/4 justify-center ">
 

@@ -93,7 +93,7 @@ function Mainpage() {
 
                 </div>
             </div >
-            < div className="container mx-auto p-4" >
+            < div className="container mx-auto p-4 pt-10" >
                 <h1 className="text-4xl font-bold mb-10 text-white text-center">PLAY LOTTERY ONLINE</h1>
                 <div className="grid grid-cols-2 gap-4 justify-center">
                     {data.map((item, index) => (
