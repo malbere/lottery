@@ -7,8 +7,8 @@ const app = express();
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
-    database: 'loto'
+    password: '',
+    database: 'loto2'
 })
 
 app.use(express.json());
@@ -34,6 +34,7 @@ app.post("/users", (req, res)=>{
         req.body.wallet,
     ];
 
+    console.log(req);
     db.query(q, [values], (err, data)=>{
         if(err) return res.json(err)
         return res.json("Data was successfully added")

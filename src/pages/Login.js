@@ -37,7 +37,7 @@ function Login() {
                                 </button>
                             </div>
                             <div className="mt-6">
-                                <p className="text-sm font-medium text-gray-900 dark:text-white">Already have an account? <a onClick={handleRegister} href="#" className="text-primary-600 hover:text-primary-700">Sign in</a></p>
+                                <p className="text-sm font-medium text-gray-900 dark:text-white">Don't have an accoung? <a onClick={handleRegister} href="#" className="text-primary-600 hover:text-primary-700">Register</a></p>
                             </div>
                         </form>
                     </div>
