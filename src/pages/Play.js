@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../static/css/numpick.scss';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 function Numpick() {
     const navigate = useNavigate();
@@ -67,6 +69,7 @@ function Numpick() {
 
   return (
     <>
+    <Header/>
       {/* Form 1 */}
       {!showForm2 && (
         <form onSubmit={handleForm1Submit}>
@@ -210,6 +213,7 @@ function Numpick() {
       </table>
     </form>
   )}
+  <Footer/>
 </>
 );
 }
