@@ -93,6 +93,7 @@ function Mainpage() {
 
                 </div>
             </div >
+<<<<<<< Updated upstream
             < div className="container mx-auto p-4 pt-10" >
                 <h1 className="text-4xl font-bold mb-10 text-white text-center">PLAY LOTTERY ONLINE</h1>
                 <div className="grid grid-cols-2 gap-4 justify-center">
@@ -104,6 +105,20 @@ function Mainpage() {
                 </div>
             </div >
 
+=======
+            <div className='bg-play-bg flex-auto'>
+                < div className="container mx-auto p-4" >
+                    <h1 className="text-4xl font-bold mb-10 text-white text-center">PLAY LOTTERY ONLINE</h1>
+                    <div className="grid grid-cols-2 gap-4 justify-center">
+                        {data.map((item, index) => (
+                            <div className="col-span-1 mb-4 pl-24" key={index}>
+                                <Card data={item} />
+                            </div>
+                        ))}
+                    </div>
+                </div >
+            </div>
+>>>>>>> Stashed changes
         </div>)
 }
 
