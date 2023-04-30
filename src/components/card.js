@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ data }) => {
+
+    const navigate = useNavigate();
+
+    const handlePlayClick = () => {
+        navigate('/play');
+    }
+
     return (
         <div className="flex flex-col items-center md:flex-row md:max-w-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow">
             <img
@@ -27,7 +35,7 @@ const Card = ({ data }) => {
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                         About
                     </button>
-                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">
+                    <button onClick={handlePlayClick} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">
                         Play Now
                     </button>
                 </div>
