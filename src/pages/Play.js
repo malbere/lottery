@@ -1,16 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../static/css/numpick.scss';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 function Numpick() {
-    const navigate = useNavigate();
-
-    const handlePlayClick = () => {
-        navigate('/play');
-    };
   const [form1Selection, setForm1Selection] = useState([]);
   const [form2Selection, setForm2Selection] = useState([]);
   const [form3Selection, setForm3Selection] = useState([]);
