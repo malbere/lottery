@@ -23,7 +23,7 @@ function Numpick() {
     [55, 56, 57, 58, 59, 60],
     [61, 62, 63, 64, 65, 66],
     [67, 68, 69, 70, 71, 72],
-    [73, 74,  ,  ,  ,  ],
+    [73, 74,  ,  ,  ,  ],
   ]);
   const [form2SelectedColumn, setForm2SelectedColumn] = useState(null);
 
@@ -39,13 +39,23 @@ function Numpick() {
 
   const handleForm1Submit = (event) => {
     event.preventDefault();
-    setShowForm2(true);
+    if (form1Selection.length < 5) {
+      alert('Please select at least 5 items.');
+    } else {
+      setShowForm2(true);
+    }
   };
+
 
   const handleForm2Submit = (event) => {
     event.preventDefault();
-    setShowForm3(true);
+    if (form2Selection.length < 1) {
+      alert('Please select at least 1 items.');
+    } else {
+      setShowForm3(true);
+    }
   };
+
 
   const handleForm2ColumnSelect = (columnIndex) => {
     setForm2SelectedColumn(columnIndex);
@@ -55,65 +65,57 @@ function Numpick() {
     setForm2Selection([item]);
   };
 
-  const handleSelectFinal = (item) => {
-    if (!form3Selection.includes(item)) {
-      setForm3Selection([item]);
-    }
-  };
 
   return (
     <>
     <Header/>
       {/* Form 1 */}
       {!showForm2 && (
-        <form onSubmit={handleForm1Submit}>
-          <table>
-            <tbody>
-              {[...Array(13)].map((_, rowIndex) => (
-                <tr key={rowIndex}>
-                  {[...Array(6)].map((_, colIndex) => {
-                    const item = rowIndex * 6 + colIndex + 1;
-                    return (
-                      <td
-                        key={item}
-                        onClick={() => handleSelect(item)}
-                        className={
-                          form1Selection.includes(item) ? 'selected' : ''
-                        }
-                      >
-                        {item}
-                      </td>
-                    );
-                  })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <button type="submit">Confirm</button>
-    </form>
+        <form onSubmit={handleForm1Submit} className="main__form">
+        <table>
+        <thead>
+          <tr>
+            <th colSpan={6}>Main numbers</th>
+          </tr>
+        </thead>
+          <tbody>
+            {Array.from({ length: 13 }, (_, rowIndex) => (
+              <tr key={rowIndex}>
+                {Array.from({ length: 6 }, (_, colIndex) => {
+                  const item = rowIndex * 6 + colIndex + 1;
+                  const isSelected = form1Selection.includes(item);
+                  return (
+                    <td
+                      key={item}
+                      onClick={() => handleSelect(item)}
+                      className={isSelected ? 'selected' : ''}
+                    >
+                      {item}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="button1">
+          <button type="submit" className="button__style">Confirm</button>
+        </div>
+      </form>
   )}
 
   {/* Form 2 */}
   {showForm2 && !showForm3 && (
     <form onSubmit={handleForm2Submit}>
-      <table>
-        <tbody>
-          <tr>
-            {form2Selection.map((item) => (
-              <td key={item}>{item}</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
 
       <table>
         <thead>
           <tr>
-            <th colSpan={6}>Table 2</th>
+            <th colSpan={6}>Bonus numbers</th>
           </tr>
         </thead>
         <tbody>
-          {[...Array(13)].map((_, rowIndex) => (
+          {[...Array(5)].map((_, rowIndex) => (
             <tr key={rowIndex}>
               {[...Array(6)].map((_, colIndex) => {
                 const item = form2Options[rowIndex][colIndex];
@@ -139,22 +141,9 @@ function Numpick() {
           ))}
         </tbody>
       </table>
-      <div>
-        <label htmlFor="columns">Select Column:</label>
-        <select
-          id="columns"
-          value={form2SelectedColumn !== null ? form2SelectedColumn : ''}
-          onChange={(event) => handleForm2ColumnSelect(parseInt(event.target.value))}
-        >
-          <option value="">All</option>
-          {[...Array(6)].map((_, i) => (
-            <option key={i} value={i}>
-              {i + 1}
-            </option>
-          ))}
-        </select>
+      <div className="button1">
+          <button type="submit" className="button__style">Confirm</button>
       </div>
-      <button type="submit">Confirm</button>
     </form>
   )}
 
@@ -164,13 +153,13 @@ function Numpick() {
       <table>
         <thead>
           <tr>
-            <th colSpan={6}>Table 1 Selection</th>
+            <th colSpan={6}>5/5 Main numbers</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             {form1Selection.map((item) => (
-              <td key={item}>{item}</td>
+              <td key={item} className='red'>{item}</td>
             ))}
           </tr>
         </tbody>
@@ -179,28 +168,13 @@ function Numpick() {
       <table>
         <thead>
           <tr>
-            <th>Table 2 Selection</th>
+            <th>1/1 Bonus numbers</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             {form2Selection.map((item) => (
-              <td key={item}>{item}</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Final Selection</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {form3Selection.map((item) => (
-              <td key={item}>{item}</td>
+              <td key={item} className='green'>{item}</td>
             ))}
           </tr>
         </tbody>

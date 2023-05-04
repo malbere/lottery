@@ -1,9 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 function Login() {
     const navigate = useNavigate();
+    const [authenticated, setAuthenticated] = useState(false);
+
+    useEffect(() => {
+        axios.get('http://localhost:8800/api')
+          .then(response => {
+            setAuthenticated(response.authenticated);
+            console.log(response.authenticated);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, []);
 
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
@@ -30,6 +42,8 @@ function Login() {
           const check = await axios.get('http://localhost:8800/users', {'username': username, 'password': password});
           console.log(check);
           console.log('Logged in!');
+          axios.post('http://localhost:8800/api/user', {"stat": true, "username": username});
+          setAuthenticated(true);
           navigate('/');
         }
         else{
@@ -39,6 +53,9 @@ function Login() {
     
       };
     return (
+        <div>
+        {
+        authenticated ? <p>Вы уже зареганы</p> :
         <section className="bg-gray-50 dark:bg-gray-900">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a onClick={handleMain} className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -71,6 +88,8 @@ function Login() {
                 </div>
             </div>
         </section>
+        }
+        </div>
     );
 }
 

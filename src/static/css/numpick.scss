@@ -1,15 +1,32 @@
 table {
-  border-collapse: collapse;
+  margin-top: 2em;
+  border-collapse: separate;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td,
 th {
-  border: 1px solid black;
-  padding: 0.5em;
+  border: 1px solid;
+  border-color: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 2px;
+  background: #414141;
+  box-shadow: 0px 4px 41px 0px rgba(0, 0, 0, 0.13);
+  padding: 0.7em;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(141, 145, 152, 1);
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-td.selected {
-  cursor: pointer;
+tr.selected {
+  border: 0px solid;
+  border-color: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 ul {
@@ -22,5 +39,45 @@ li {
 }
 
 .selected {
-  background-color: red;
+  border: 1px;
+  border-color: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(0, 0, 0, 1) 100%);;
+  background: #F33F5F;
+  color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.submit__button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.button__style {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #7DE073;
+  font-weight: 500;
+  padding: 0.7em;
+  border-radius: 5px;
+  color:#3A3A3A;
+}
+
+.button1 {
+  margin-top: 1em;
+  text-align: center;
+  padding: 3em;;
+}
+
+.green {
+  background-color: #7DE073;
+  color: #3A3A3A;
+}
+
+.red {
+  background-color: #F33F5F;
+  color: white;
 }
