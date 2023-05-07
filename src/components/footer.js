@@ -2,12 +2,11 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-transponent text-white py-4 bottom w-full pt-20 pb-18">
-    {/* </footer><footer className="flex flex-col items-center justify-center"> */}
+    <footer className="bg-transponent text-white py-4 bottom w-full pt-20 pb-18" style ={{background: "linear-gradient(181.62deg, #0C111C 1.37%, rgba(13, 25, 27, 0.4) 67.84%)", paddingTop: '7%'}}>
       <div className="container mx-auto px-4 space-y-6 w-2/4 justify-center ">
 
-        <div>
-          <h2 className="text-white font-bold text-4xl mr-4 flex flex-col items-center">WHAT IS THE CRYPTOLOTTERY?</h2>
+        <div style={{marginBlockEnd: "4%"}}>
+          <h2 className="text-white font-bold text-4xl mr-4 flex flex-col items-center" style={{fontStyle: "normal", fontWeight: 700, fontSize: "42px", lineHeight: "140%"}}>WHAT IS THE CRYPTOLOTTERY?</h2>
         </div>
 
         <div className="space-y-4">

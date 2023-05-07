@@ -1,4 +1,78 @@
 .bgclr {
     background-color: #151822bf;
-
 }
+
+.my-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 55px;
+    gap: 10px;
+    text-align: center;
+    
+    position: absolute;
+    width: 200px;
+    height: 55px;
+    
+    background: linear-gradient(94.73deg, #04C1FD 0%, #697DE8 53.96%, #9C4EDB 99.99%, #B445F9 100%);
+    border-radius: 12px;
+
+    position: absolute;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    
+    color: #FFFFFF;
+    
+  }
+  
+  .my-button:hover {
+    background: #2DA4F4;
+  }
+  
+  .my-button:active {
+    background: #2DA4F4;
+  }
+
+
+  .my-button2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 24px;
+    gap: 10px;
+    margin-left: 1000;
+    
+    width: 124px;
+    height: 48px;
+    left: calc(50% - 124px/2 + 66.5px);
+    top: 155px;
+    
+    /* btn */
+    
+    background: linear-gradient(94.73deg, #04C1FD 0%, #697DE8 53.96%, #9C4EDB 99.99%, #B445F9 100%);
+    box-shadow: 0px 4px 16px rgba(75, 72, 241, 0.41);
+    border-radius: 12px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    
+    
+    /* white / white */
+    
+    color: #FFFFFF;
+    
+  }
+  
+  .my-button2:hover {
+    background: #2DA4F4;
+  }
+  
+  .my-button2:active {
+    background: #2DA4F4;
+  }

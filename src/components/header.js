@@ -19,7 +19,6 @@ const Header = () => {
 
     const handleLogOUT = () => {
         axios.post('http://localhost:8800/api/user', {"stat": false, "username": username});
-        ///setAuthenticated(false);
         axios.get('http://localhost:8800/api')
           .then(response => {
             setAuthenticated(response.authenticated);
@@ -34,7 +33,6 @@ const Header = () => {
     };
 
     const handleAccount = () => {
-        /// axios.post('http://localhost:8800/api/user', {"stat": false, "username": username});
         navigate('/');
     };
 
@@ -46,6 +44,9 @@ const Header = () => {
           .then(response => {
             console.log(response.data);
             if (response.data.length == 0){
+                console.log('len = 0');
+                setAuthenticated(false);
+                setUsername('response.data.username');
             }
             else{
                 if(response.data.authenticated == false){
@@ -66,9 +67,9 @@ const Header = () => {
       }, []);
 
     return (
-        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900" style={{backgroundColor: "#0B121D"}}>
             {
-            !authenticated ?
+            (authenticated == false || authenticated == undefined) ?
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a onClick={handleMain} class="flex items-center">
                     <img src="/img/logo.png" class="h-14 mr-3" alt="Flowbite Logo" />
@@ -83,7 +84,7 @@ const Header = () => {
                 </div>
             </div>
             :
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" >
                 <a onClick={handleMain} class="flex items-center">
                     <img src="/img/logo.png" class="h-14 mr-3" alt="Flowbite Logo" />
                 </a>
