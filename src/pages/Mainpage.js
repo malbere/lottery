@@ -9,7 +9,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/1.png',
+        img: '../static/img/card/1.png',
         alt: 'image of card'
     },
     {
@@ -17,7 +17,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/3.png',
+        img: '../static/img/card/3.png',
         alt: 'image of card'
     },
     {
@@ -25,7 +25,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/2.png',
+        img: '../static/img/card/2.png',
         alt: 'image of card'
     },
     {
@@ -33,7 +33,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/4.png',
+        img: '../static/img/card/4.png',
         alt: 'image of card'
     },
     ,
@@ -42,7 +42,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/5.png',
+        img: '../static/img/card/5.png',
         alt: 'image of card'
     },
     {
@@ -50,7 +50,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/6.png',
+        img: '../static/img/card/6.png',
         alt: 'image of card'
     },
     {
@@ -58,7 +58,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/7.png',
+        img: '../static/img/card/7.png',
         alt: 'image of card'
     },
     {
@@ -66,7 +66,7 @@ const data = [
         date: '26 April 19:00',
         description: 'Text',
         price: '$5.00',
-        img: '/img/card/8.png',
+        img: '../static/img/card/8.png',
         alt: 'image of card'
     }
 ];
@@ -74,13 +74,13 @@ const maxLotteries = 6;
 
 function SkeletonCard() {
     return (
-      <div className="bg-white p-6 rounded-md shadow-md animate-pulse">
-        <div className="h-4 bg-gray-400 rounded mb-4"></div>
-        <div className="h-8 bg-gray-400 rounded mb-4"></div>
-        <div className="h-8 bg-gray-400 rounded"></div>
-      </div>
+        <div className="bg-white p-6 rounded-md shadow-md animate-pulse">
+            <div className="h-4 bg-gray-400 rounded mb-4"></div>
+            <div className="h-8 bg-gray-400 rounded mb-4"></div>
+            <div className="h-8 bg-gray-400 rounded"></div>
+        </div>
     );
-  }
+}
 
 function Mainpage() {
     const navigate = useNavigate();
@@ -97,29 +97,28 @@ function Mainpage() {
 
     return (
         <div>
-
-            <div class="" style={{ background: 'linear-gradient(83.54deg, rgba(0, 0, 0, 0.49) 4.49%, rgba(0, 0, 0, 0.3332) 51.63%, rgba(0, 0, 0, 0) 94.46%)', height: 883, }}>
-                <div class="flex">
-                    <div class="w-full md:w-1/2 pl-22" style={{ paddingTop: "230px", paddingLeft: '375px' }}>
-                        <p class="text-white text-8xl ml-auto pl-12 mb-10 font-extrabold" >
+            <div style={{ background: 'linear-gradient(83.54deg, rgba(0, 0, 0, 0.49) 4.49%, rgba(0, 0, 0, 0.3332) 51.63%, rgba(0, 0, 0, 0) 94.46%)', height: 883, }}>
+                <div className="flex">
+                    <div className="w-full md:w-1/2 pl-22" style={{ paddingTop: "230px", paddingLeft: '375px' }}>
+                        <p className="text-white text-8xl ml-auto pl-12 mb-10 font-extrabold" >
                             Make Your Own<br></br> Luck!
                         </p>
-                        <p class="text-white text-2xl ml-auto pl-12 mb-0">
+                        <p className="text-white text-2xl ml-auto pl-12 mb-0">
                             Believe it or not... you're luckier
                         </p>
-                        <p class="text-white text-2xl ml-auto pl-12 mt-0">than you think!</p>
-                        <div class="pl-12 pt-20">
+                        <p className="text-white text-2xl ml-auto pl-12 mt-0">than you think!</p>
+                        <div className="pl-12 pt-20">
                             <button
                                 type="button"
                                 onClick={handleGetStartedClick}
-                                class="my-button"
+                                className="my-button"
                             >
                                 Join now
                             </button>
                         </div>
                     </div>
                     <div style={{ position: 'relative', width: '1200px', height: '883px' }} >
-                        <img class="w-full" src="img/promopng.png" alt="" style={{ margingRight: "-100px", position: 'absolute', bottom: 0, right: 0, }} />
+                        <img className="w-full" src="../static/img/promopng.png" alt="" style={{ margingRight: "-100px", position: 'absolute', bottom: 0, right: 0, }} />
                     </div>
                 </div>
             </div>
@@ -166,7 +165,7 @@ function Mainpage() {
                                         alignItems: 'center',
                                     }} onClick={handleViewAllLotteries}>
                                         View all lotteries
-                                        <img src="img/arrow-down.svg" alt="arrow down" style={{ marginLeft: '8px' }} />
+                                        <img src="../static/img/arrow-down.svg" alt="arrow down" style={{ marginLeft: '8px' }} />
                                     </button>
                                 </div>
                             </div>
@@ -179,10 +178,13 @@ function Mainpage() {
                                     </div>
                                 ))}
                             </div>
+                            
                         )}
                     </div>
                 </div >
             </div >
+
+
 
         </div>)
 }
